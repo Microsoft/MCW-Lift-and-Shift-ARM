@@ -668,7 +668,12 @@ the roles.
         "createOption": "FromImage"
     }
     ```
-
+13. Step: Define two variables that build the paths for two data disks for the hackathonSqlVM by first adding the
+          storage paths as variables in the variables section of the template.
+          
+        "dataDisk1VhdName": "[concat('http://',variables('hackStorageName'),'.blob.core.windows.net/','vhds','/','dataDisk1.vhd')]",
+        "dataDisk2VhdName": "[concat('http://',variables('hackStorageName'),'.blob.core.windows.net/','vhds','/','dataDisk2.vhd')]"
+          
 13. To deploy two 1TB data disks, add the following section to the
     properties, storage profile section of the **hackathonSqlVM** (right
     after osDisk).
