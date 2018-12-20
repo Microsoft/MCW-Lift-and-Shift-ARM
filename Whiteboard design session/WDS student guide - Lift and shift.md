@@ -28,16 +28,16 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 <!-- TOC -->
 
 - [Lift and shift whiteboard design session student guide](#lift-and-shift-whiteboard-design-session-student-guide)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-        - [Customer situation](#customer-situation)
-        - [Customer needs](#customer-needs)
-        - [Customer objections](#customer-objections)
-        - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+    - [Customer situation](#customer-situation)
+    - [Customer needs](#customer-needs)
+    - [Customer objections](#customer-objections)
+    - [Infographic for common scenarios](#infographic-for-common-scenarios)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+  - [Step 3: Present the solution](#step-3-present-the-solution)
+  - [Wrap-up](#wrap-up)
+  - [Additional references](#additional-references)
 
 <!-- /TOC -->
 
@@ -58,9 +58,10 @@ Analyze your customer’s needs.
 Timeframe: 15 minutes 
 
 Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
-1.  Meet your table participants and trainer.
+1.  Meet your table participants and trainer. 
 2.  Read all of the directions for steps 1–3 in the student guide. 
 3.  As a table team, review the following customer case study.
+
 
 ### Customer situation
 
@@ -206,7 +207,7 @@ and potential obstacle to migration.
 
 1.  Lucerne Publishing has asked you to assess each application for suitability and cost analysis before migrating to Azure.
 
-2.  The procurement system is a critical business application. Availability is required 24/7, including during migration.
+2.  The procurement system is a critical business application. Availability is required 24/7, including during migration. The application and database must also support zero data loss in the event of a datacenter outage.
 
 3.  The HR application is only used in office hours and a once-off 12-hour migration window can be made available.
 
@@ -218,11 +219,13 @@ and potential obstacle to migration.
 
 7.  Lucerne demands there is a way to "fail back" if something goes wrong at any point in the migration process.
 
-8.  Both applications are intranet applications. Lucerne requires connectivity from their corporate network to be robust, secure and performant.
+8.  Both applications are Intranet applications. Lucerne requires connectivity from their corporate network to be robust, secure and performant.
 
-9.  All Azure deployments must support least-privilege access controls and protections to ensure production resources cannot be modified or deleted without authorization or by accident.
+9.  All Azure deployments must support least-privilege access controls, and protections to ensure production resources cannot be modified or deleted without authorization or by accident.
     
 10.  Mechanisms must be in place to control and monitor Azure cost and prevent use of unapproved Azure services.
+
+11.  Lucerne needs a solution for monitoring performance and availability of every level of the applications.
 
 ### Customer objections 
 
@@ -234,10 +237,8 @@ and potential obstacle to migration.
 
 4.  Our operations team is new to the cloud and currently uses existing technologies like System Center Operations Manager (SCOM). We are concerned about the time it takes to learn new technologies to monitor and maintain an existing workload.
 
-5.  Logistics and procurement is one of our most critical applications. Any glitch will cause havoc in our ecosystem. The procurement system migration must be seamless, with no loss of data and no application downtime.
-
-6.  The procurement application is a simple application with known dependencies and is perfect for a pilot. What about more complicated
-    workloads or workloads where we don't exactly know where the dependencies are?
+5.  Logistics and procurement is one of our most critical applications. Any glitch will cause
+    havoc in our ecosystem. The procurement system migration must be seamless, with no loss of data and no application downtime.
 
 ### Infographic for common scenarios
 
@@ -265,17 +266,30 @@ Directions: With all participants at your table, respond to the following questi
 
 _Networking and Security_
 
-1.  Which peering options and other ExpressRoute features would be required?
+1.  Which peering options and other ExpressRoute features would be
+    required?
 
-2.  Can you identify the workflow that Lucerne will need to follow to enable ExpressRoute in its environment?
+2.  Can you identify the workflow that Lucerne will need to follow to
+    enable ExpressRoute in its environment?
 
-3.  The networking team has provided the following address space for creating the virtual network: 10.0.1.0/24. The on-premises network uses the following address space: 172.16.0.0/16. By drawing a diagram, what connectivity options and subnets would you use for the network design?
+3.  The networking team has provided the following
+    address space for creating the virtual network: 10.0.1.0/24. The
+    on-premises network uses the following address space: 172.16.0.0/16.
+    By drawing a diagram, what connectivity options and subnets would
+    you use for the network design?
 
-4.  What additional security measures can you take to minimize the attack surface of each application at the network level?
+4.  What additional security measures can you take to minimize the
+    attack surface of each application at the network level?
 
-5.  What does Lucerne need to do to allow isolated access to different components of Azure? Specifically, your design should allow the network infrastructure team to manage the virtual network, the procurement infrastructure team to manage the procurement  infrastructure, and the HR team to manage the HR application.
+5.  What does Lucerne need to do to allow isolated access to different
+    components of Azure? Specifically, your design should allow the
+    network infrastructure team to manage the virtual network, the
+    procurement infrastructure team to manage the procurement
+    infrastructure, and the HR team to manage the HR application.
 
 6.  How can Lucerne control and monitor their Azure spend?
+
+7.  How can Lucerne monitor every level of their applications in Azure for performance and availability?
 
 _Migration - Procurement system_
 
@@ -328,7 +342,7 @@ _Migration - HR application_
 
 Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution. 
+1.  Identify any customer needs that are not addressed with the proposed solution.
 2.  Identify the benefits of your solution.
 3.  Determine how you will respond to the customer’s objections.
 
@@ -338,8 +352,7 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
 
 **Outcome**
  
-Present a solution to the target customer audience in a 15-
-minute chalk-talk format.
+Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 30 minutes
 
@@ -351,7 +364,7 @@ Directions:
 3.  The Microsoft team presents their proposed solution to the customer.
 4.  The customer makes one of the objections from the list of objections.
 5.  The Microsoft team responds to the objection.
-6.  The customer team gives feedback to the Microsoft team.
+6.  The customer team gives feedback to the Microsoft team. 
 7.  Tables switch roles and repeat Steps 2–6.
 
 ## Wrap-up 
@@ -374,6 +387,8 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Site-to-Site VPN documentation | <https://azure.microsoft.com/en-us/documentation/services/vpn-gateway/> |
 | ExpressRoute documentation | <https://azure.microsoft.com/en-us/documentation/services/expressroute/> |
 | Application Gateway documentation | <https://azure.microsoft.com/en-us/documentation/services/application-gateway/> |
+| Azure Availability Zones | https://docs.microsoft.com/en-us/azure/availability-zones/az-overview |
+| Azure Monitor | https://docs.microsoft.com/en-us/azure/azure-monitor/ |
 | Azure Migration Hub | https://azure.microsoft.com/migration/ |
 | Prepare for Azure Site Recovery deployment | <https://azure.microsoft.com/en-us/documentation/articles/site-recovery-best-practices/> |
 | Replicate VMware virtual machines and physical servers to Azure with Azure Site Recovery | <https://azure.microsoft.com/en-us/documentation/articles/site-recovery-vmware-to-azure-classic/> |

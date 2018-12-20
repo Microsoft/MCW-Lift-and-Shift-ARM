@@ -27,29 +27,29 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 <!-- TOC -->
 
 - [Azure Resource Manager hands-on lab step-by-step](#azure-resource-manager-hands-on-lab-step-by-step)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Overview](#overview)
-    - [Solution architecture](#solution-architecture)
-    - [Requirements](#requirements)
-    - [Help references](#help-references)
-    - [Exercise 1: Configure Automation Account](#exercise-1-configure-automation-account)
-        - [Task 1: Create Automation Account](#task-1-create-automation-account)
-        - [Task 2: Add an Azure Automation credential](#task-2-add-an-azure-automation-credential)
-        - [Task 3: Upload DSC Configurations into Automation Account](#task-3-upload-dsc-configurations-into-automation-account)
-    - [Exercise 2: Define the network foundation](#exercise-2-define-the-network-foundation)
-        - [Task 1: Deploy a virtual network with a template](#task-1-deploy-a-virtual-network-with-a-template)
-    - [Exercise 3: Extend with Compute](#exercise-3-extend-with-compute)
-        - [Task 1: Add an Azure storage account](#task-1-add-an-azure-storage-account)
-        - [Task 2: Add a virtual machine and configure as a web server](#task-2-add-a-virtual-machine-and-configure-as-a-web-server)
-        - [Task 3: Add a Windows virtual machine for the database server](#task-3-add-a-windows-virtual-machine-for-the-database-server)
-        - [Task 4: Deploy your updated template to Azure](#task-4-deploy-your-updated-template-to-azure)
-    - [Exercise 4: Lock down the environment](#exercise-4-lock-down-the-environment)
-        - [Task 1: Restrict traffic to the web server](#task-1-restrict-traffic-to-the-web-server)
-        - [Task 2: Update the network security group to allow Windows Remote Desktop](#task-2-update-the-network-security-group-to-allow-windows-remote-desktop)
-    - [Exercise 5: Scale out the deployment](#exercise-5-scale-out-the-deployment)
-        - [Task 1: Parameterize and scale out the environment](#task-1-parameterize-and-scale-out-the-environment)
-    - [After the hands-on lab](#after-the-hands-on-lab)
-        - [Task 1: Delete the resource groups created](#task-1-delete-the-resource-groups-created)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Overview](#overview)
+  - [Solution architecture](#solution-architecture)
+  - [Requirements](#requirements)
+  - [Help references](#help-references)
+  - [Exercise 1: Configure Automation Account](#exercise-1-configure-automation-account)
+    - [Task 1: Create Automation Account](#task-1-create-automation-account)
+    - [Task 2: Add an Azure Automation credential](#task-2-add-an-azure-automation-credential)
+    - [Task 3: Upload DSC Configurations into Automation Account](#task-3-upload-dsc-configurations-into-automation-account)
+  - [Exercise 2: Define the network foundation](#exercise-2-define-the-network-foundation)
+    - [Task 1: Deploy a virtual network with a template](#task-1-deploy-a-virtual-network-with-a-template)
+  - [Exercise 3: Extend with Compute](#exercise-3-extend-with-compute)
+    - [Task 1: Add an Azure storage account](#task-1-add-an-azure-storage-account)
+    - [Task 2: Add a virtual machine and configure as a web server](#task-2-add-a-virtual-machine-and-configure-as-a-web-server)
+    - [Task 3: Add a Windows virtual machine for the database server](#task-3-add-a-windows-virtual-machine-for-the-database-server)
+    - [Task 4: Deploy your updated template to Azure](#task-4-deploy-your-updated-template-to-azure)
+  - [Exercise 4: Lock down the environment](#exercise-4-lock-down-the-environment)
+    - [Task 1: Restrict traffic to the web server](#task-1-restrict-traffic-to-the-web-server)
+    - [Task 2: Update the network security group to allow Windows Remote Desktop](#task-2-update-the-network-security-group-to-allow-windows-remote-desktop)
+  - [Exercise 5: Scale out the deployment](#exercise-5-scale-out-the-deployment)
+    - [Task 1: Parameterize and scale out the environment](#task-1-parameterize-and-scale-out-the-environment)
+  - [After the hands-on lab](#after-the-hands-on-lab)
+    - [Task 1: Delete the resource groups created](#task-1-delete-the-resource-groups-created)
 
 <!-- /TOC -->
 
@@ -92,8 +92,7 @@ The company has asked you to define an Azure Resource Manager (ARM) template tha
 | Azure DSC Extension for Virtual Machines | <https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/dsc-template> |
 | Azure Virtual Machine Scale Sets | <https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/> |
 | Azure Virtual Machine Scale Sets and Azure Automation DSC| <https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-automation-dsc> |
-| App Service for Linux | <https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-intro/> |
-| Azure CLI | <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli/> |
+
 
 
 
@@ -115,6 +114,7 @@ resources of your ARM template.
 3.  Click **Create** on the Automation blade to display the **Add Automation Account** blade. Specify the following information, and click **Create**:
     
     ![In the Add Automation Account blade, the Name field is set to Automation-Acct. The Resource Group field is set to Automation\_RG, and the Create new radio button is selected. The Location field is set to Location nearest you. TheCreate Azure Run As account is set to Yes.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image17.png "Add Automation Account blade")
+    
 
 ### Task 2: Add an Azure Automation credential
 
