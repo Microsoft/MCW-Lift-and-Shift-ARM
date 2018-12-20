@@ -112,7 +112,7 @@ resources of your ARM template.
     
     ![In the Add Automation Account blade, the Name field is set to Automation-Acct. The Resource Group field is set to Automation\_RG, and the Create new radio button is selected. The Location field is set to Location nearest you. TheCreate Azure Run As account is set to Yes.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image17.png "Add Automation Account blade")
 
-    > Note: Ignore the warning about the Azure Run As Account. It is not needed to complete this lab.
+    > **Note**: Ignore the warning about the Azure Run As Account. It is not needed to complete this lab.
 
 ### Task 2: Add an Azure Automation credential
 
@@ -121,7 +121,7 @@ resources of your ARM template.
     Within the Azure Automation Account click **Credentials**
     in the **SHARED RESOURCES** section.
 
-    ![In the Shared Resources section, Credentials is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-12-19-19-30-38.png "Shared Resources section")
+    ![In the Shared Resources section, Credentials is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/2018-12-19_19-07-35.png)
 
 2.  Click the **Add a credential** button.
 
@@ -137,7 +137,7 @@ resources of your ARM template.
 
     ![The fields in the New Credential dialog box are set to the previously listed settings.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image23.png "New Credential dialog box")
 
-Important: It is important to use the exact name for the credential,
+    > **IMPORTANT**: It is important to use the exact name for the credential (it is case sensetive),
 because one of the scripts you upload in the next step references the
 name directly.
 
@@ -162,7 +162,6 @@ name directly.
     
     ![In the DSC Configurations pane, under Name, CloudShopSQL is circled. In the CloudShopSQL pane, the Compile button is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image20.png "DSC Configurations CloudShopSQL panes")
 
-
 ## Exercise 2: Define the network foundation
 
 Duration: 15 minutes
@@ -176,7 +175,7 @@ using Visual Studio and deploy it to your Azure account.
     and if it is not, click the Windows icon in the bottom left corner,
     and type in Visual Studio. You should see the start icon.
 
-    > Tip: Login to Visual Studio using the same credentials you use to login to Azure.
+    > **Tip**: Login to Visual Studio using the same credentials you use to login to Azure.
 
 2.  Choose **File**, and **New Project**. Then, choose **Cloud**
     followed by **Azure Resource Group**.
@@ -201,7 +200,7 @@ using Visual Studio and deploy it to your Azure account.
 
     ![In the ARMHackathon Visual Studio window, JSON Outline displays in the left pane. In the right pane, the azuredeploy.json file displays.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image27.png "Visual Studio window")
 
-    > Note: If this was not the case, go to the View menu, select Other Windows, and choose JSON Outline. The window should look like the following image.
+    > **Note**: If this was not the case, go to the View menu, select Other Windows, and choose JSON Outline. The window should look like the following image.
 
 7.  On the **JSON Outline** window, click **Add Resource** in the upper-left corner or right-click the **resources**, and choose **Add New Resource**.
 
@@ -237,17 +236,19 @@ using Visual Studio and deploy it to your Azure account.
 
     ![In the Solution Explorer window, ARMHackathon is selected, and in the right-click menu, New is called out (1), and in its right-click menu, Deploy is called out(2).](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image30.png "Solution Explorer window")
 
-12. On the Create Resource Group dialog box, accept the default value for the name. For the location, choose the **closest location to you**, and click **Create**.
+12. On the Deploy to Resource Group dialog box, choose **\<Create New...\>** from the **Resource group** dropdown.
+
+13. On the Create Resource Group dialog box, accept the default value for the name. For the location, choose the **closest location to you**, and click **Create**.
 
     ![In the Create Resource Group window, the Create button is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image34.png "Create Resource Group window")
 
-13. When you are back on the Deploy to Resource Group dialog box, click
+14. On the Deploy to Resource Group dialog box, click
     **Deploy**. After about a minute, your virtual network will be
     deployed to Azure.
 
     ![In the Deploy to Resource Group window, the Deploy button is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image35.png "Deploy to Resource Group window")
 
-14. View the created resource group and virtual network in the Azure
+15. View the created resource group and virtual network in the Azure
     Management Portal by clicking **Resource Groups** and clicking the
     **ARMHackathon**.
 
@@ -255,12 +256,12 @@ using Visual Studio and deploy it to your Azure account.
 
     ![In the Azure Management Portal, in the ARMHackathon resource group, Overview is selected in the left pane. In the right pane, under Essentials, under Name, hackathonVnet is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image37.png "Azure Management Portal")
 
-    > Note: If the resource group was created but the virtual network was not, redeploy the template once more from Visual Studio.
+    > **Note**: If the resource group was created but the virtual network was not, redeploy the template once more from Visual Studio.
 
     You should see an indication of a successful deployment in the **Output** screen.
     ![In the Output window, in the output for ARMHackathon, ProvisioningState Succeeded is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image38.png "Output window")
 
-15. To verify the new network was created, within the Azure portal,
+16. To verify the new network was created, within the Azure portal,
     navigate to **Virtual Networks**. Your new network should be listed
     there.
 
@@ -283,7 +284,7 @@ the roles.
 
 2.  Add a new **Storage Account** resource to the template named ***hackstorage***.
 
-    > Note: The template generated in the Azure SDK appends a unique value (13 characters in length) to the storage account name. Storage account names must not exceed 24 characters. Ensure the name specified is 11 characters or less in length.
+    > **Note**: The template generated in the Azure SDK appends a unique value (13 characters in length) to the storage account name. Storage account names must not exceed 24 characters. Ensure the name specified is 11 characters or less in length.
 
     ![In the Add New Resource window, in the left pane, Storage Account is selected. In the right, Create a Storage account pane, hackstorage is typed into the Name field.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image40.jpg "Add Resource window")
 
@@ -296,7 +297,7 @@ the roles.
     subnet as the Virtual network/subnet. The **FrontEndNet** is the
     value of **hackathonVnetSubnet1Name** variable.
 
-    > Note: The storage account will be changed later to use a new feature called Managed Disks.
+    > **Note**: The storage account will be changed later to use a new feature called Managed Disks.
 
     ![The fields in the Windows Virtual Machine window are set to the previously mentioned settings.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image44.jpg "Windows Virtual Machine window")
 
@@ -329,7 +330,7 @@ the roles.
 
     ![In the Add Resource window, in the left pane, Public IP Address is circled. In the right, Create a Public IP Address pane, the Name field is set to hackathonPublicIP, and is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image47.png "Add Resource window")
 
-    > Note: If you inspect the JSON for the NIC, you'll notice that the ipConfigurations were modified to refer to the public IP address just added!
+    > **Note**: If you inspect the JSON for the NIC, you'll notice that the ipConfigurations were modified to refer to the public IP address just added!
 
 5.  In the JSON outline pane, select the hackathonVM object.
 
@@ -540,7 +541,7 @@ the roles.
       }
     ```
 
-    > Tip: After this step you should not see any more red warnings in the Visual Studio editor. 
+    > **Tip**: After this step you should not see any more red warnings in the Visual Studio editor. 
 
 12. In the "**variables**" section, change the value of hackathonVMVmSize\" to **\"Standard\_DS2\_v2"**.
 
@@ -571,7 +572,7 @@ the roles.
 
     ```
     "hackathonSqlVMImagePublisher": "MicrosoftSQLServer",
-    "hackathonSqlVMImageOffer": "SQL2016SP1-WS2016",
+    "hackathonSqlVMImageOffer": "SQL2016SP2-WS2016",
     ```
 
 5.  Find the **hackathonSqlVMWindowsOSVersion** parameter.
@@ -626,8 +627,7 @@ the roles.
 
 10. Navigate to the **resources** section for the **hackathonSqlVM**.
     Find the **hardwareProfile** section, and replace the reference to
-    the **vmSize** variable to a reference to the new **vmSizeSql**
-    parameter:
+    the *variable* **vmSize** to a reference to the new *parameter* **vmSizeSql**:
     
     ```
     "vmSize": "[parameters('vmSizeSql')]"
@@ -672,8 +672,6 @@ the roles.
 
     Your code change should look like this:
 
-    ***REPLACE IMAGE***
-
     ![In the code window, code is circled naming the dataDisks datadisk1, setting its disk size at 1023 GB](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image65.png "code window")
 
 14. Next you will add the PowerShell DSC Extension named
@@ -682,7 +680,7 @@ the roles.
 
     ![In the PowerShell DSC Extension window, in the Name field, hackathonDSCSQL is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image66.png "PowerShell DSC Extension")
 
-15. Find the existing **nodeConfigurationName** and create a new parameter that will be different for the SQL VM. In the
+15. Find the existing *parameter* **nodeConfigurationName** and create a new parameter that will be different for the SQL VM. In the
     **parameters** section, add the following code immediately after the
     existing **nodeConfigurationName** parameter.
     
@@ -708,7 +706,7 @@ the roles.
 
     ![In the Code window, the typeHandlerVersion of 2.19 is circled, and the autoUpgradeMinorVersion of false is circled.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image49.png "Code window")
 
-    > Note: This is due to a bug in PowerShell DSC at the time of this
+    > **Note**: This is due to a bug in PowerShell DSC at the time of this
     writing. It may be resolved by now.
 
 19. Find the settings code within the PowerShell DSC section you just
@@ -877,7 +875,7 @@ the roles.
 
     ![Fields in the Edit Parameters dialog box are set to the previously mentioned settings and values.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image76.png "Edit Parameters dialog box")
 
-    > Note: The deployment may take 20 to 30 minutes to complete.
+    > **Note**: The deployment may take 20 to 30 minutes to complete.
 
     **Extension Troubleshooting Tip:** If you make a mistake with either of the
     Azure DSC extensions and need to redeploy, open the virtual machine in
@@ -885,7 +883,7 @@ the roles.
     extension before deploying. Then, in your Automation Account, under the
     DSC Nodes, unregister the node.
 
-    > Note: The DSC configuration may take time to apply following the
+    > **Note**: The DSC configuration may take time to apply following the
     successful template deployment. Monitor this in the DSC Nodes section in
     the Automation Account properties. Wait to proceed until both nodes show
     as compliant.
