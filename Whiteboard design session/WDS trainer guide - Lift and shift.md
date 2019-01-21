@@ -1100,24 +1100,50 @@ _Migration - HR application_
 
     -   Migrating the web tier
     
-        This poses a significant challenge. The existing physical servers
-        use UEFI boot, and therefore Azure Site Recovery cannot be used.
-        The application installers are not available, and so re-installing the application
-        onto clean Azure VMs would be very difficult.
+        Azure Site Recovery could be used to migrate the web tier. The application installers are not available, and so re-installing the application
+        onto clean Azure VMs would be very difficult. The steps to migrate would be similar to migrating the procurement application.
 
-        In this situation, use of third-party migration tools should be explored.
-        For example, [CloudEndure](https://www.cloudendure.com/live-migration/)
-        offers block-level migration of both VMs and physical servers. The migration process
-        is as follows:
-        -   Install the CloudEndure agent on the physical servers to be migrated.
-        -   Specify the destination servers in Azure.
-        -   CloudEndure will replicate the physical servers to Azure, at the block level,
-            including any on-going changes. This occurs in the background, without disrupting
-            the running application.
-        -   To test the migrated server, CloudEndure allows you to spin up new Azure
-            servers for verification.
-        -   Once testing is complete, user traffic can be cut over to the migrated servers
-            similarly to the procurement system.
+        Use ASR to facilitate the migration. ASR supports physical servers to ARM failovers and can be used for the web tier of the application. This allows for simple migration of the application without the need for the original application installers. 
+            
+        Use the  [Azure documentation](https://docs.microsoft.com/en-us/azure/site-recovery/physical-azure-architecture) to set up ASR replication. This includes:
+            -   Provisioning the Azure environment (Recovery Services Vault, Virtual Network and Storage Account).
+            -   Setting up ASR in the on-premises environment, including deploying the ASR Configuration Server
+                and connecting it with your Recovery Service Vault.
+            -   Replicating the web tier servers to Azure Storage. This includes setting the replication policy
+                which defines the retention period (0 suffices since we will only use the latest recovery point),
+                the type of snapshots to use (crash-consistent snapshots suffices for the web tier), and whether
+                to use a replication group.
+
+        To test the migration before the live site cutover:
+        -   Initiate a test failover from the Azure portal. This will create
+                new Azure VMs from the replicated data from the legacy web servers.
+                These VMs will be connected to the on-premises production database
+                (if desired, a test database could be configured).
+        -   Configure the backend server pool of the Internal Load Balancer
+                to reference the HR web servers.
+        -   Test the new web tier via the Internal Load Balancer front-end IP. 
+
+        To perform the migration:
+        -   Initiate a planned failover from the Azure portal. As with the test
+                failover, this will create Azure VMs from the replicated web tier disks,
+                connected to the on-premises production database.
+        -   Update the Internal Load Balancer back-end server pool to reference
+                the new web server VMs, and validate the application is working.
+        -   Update the DNS entry for the 'https://<span></span>AskHR' endpoint
+                to point to the Internal Load Balancer front-end.
+
+        Rollback (if required):
+        -   If the migration does not work properly, there is a simple back out plan. The
+                planned failover should be canceled from the portal and
+                then the physical servers on-premises should be restarted to restore
+                service.
+        -   If the 'AskHR' DNS entry has already been updated, revert it to the previous value.
+                
+        > **Note**: To minimize the impact of DNS caching, the Time-To-Live (TTL) for the DNS entry
+            should be reduced to a short value (e.g. 60 seconds) well in advance of the migration.
+            This enables DNS changes during migration and roll-back to take effect quickly.
+            Once migration is successful and stable, the TTL should be returned to a long value (e.g. 1 day)
+
 
     -   Migrating the database tier     
 
