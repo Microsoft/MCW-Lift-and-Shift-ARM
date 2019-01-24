@@ -1308,7 +1308,7 @@ feature.
 
     ![Screenshot of the two hackathon resource line items.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image92.png "resources line items")
 
-This VM and NIC will be replaced by the VMs in the scale set.
+    This VM and NIC will be replaced by the VMs in the scale set.
 
 7.  Delete the existing deployment (to save on core quota) by opening
     the Azure portal (portal.azure.com) in your browser.
