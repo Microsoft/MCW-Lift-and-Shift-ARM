@@ -9,14 +9,14 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-August 2018
+December 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
-The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these umanufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third-party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
+The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third-party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 © 2018 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
@@ -105,7 +105,7 @@ Design a solution and prepare to present the solution to the target customer aud
 
 -   Determine your target customer audience.
 
--   Determine customer's business needs to address your solutio.n
+-   Determine customer's business needs to address your solution.
 
 -   Design and diagram your solution.
 
@@ -270,7 +270,7 @@ The backend for this solution is hosted on a VMware VMs using SQL Server
 2012 with Always On availability groups.
 The solution makes heavy use of TempDB when
 generating ad hoc reports. The database size for this workload is
-around 600 GB. The prcurement system is a third-party component which is 
+around 600 GB. The procurement system is a third-party component which is 
 certified for use with all supported versions of SQL Server but not
 with Azure SQL Database. SQL Server capitalizes on System
 Center Data Protection Manager (DPM) 2012 R2 for regular backups
@@ -295,7 +295,7 @@ She has described this as a legacy application, which Lucerne plan to replace
 within the next 24 months.
 Ellen's team is stretched and she is keen to minimize any on-going maintenance.
 
-It is a two-tier applicaiton architecture, with the web tier running on Windows Server 2012 with 
+It is a two-tier application architecture, with the web tier running on Windows Server 2012 with 
 Microsoft Internet Information Services (IIS) and ASP.NET with the .NET
 Framework 4.5. This is implemented on two Dell PowerEdge servers,
 with two 4-core Intel Xeon CPUs (Sandy Bridge) and 4GB memory. Both the OS and application
@@ -531,7 +531,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ## Step 1: Review the customer case study
 
--   Check in with your table participants to introduce yourself as the traine.
+-   Check in with your table participants to introduce yourself as the trainer.
 
 -   Ask, "What questions do you have about the customer case study?"
 
@@ -583,7 +583,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 -   Jesse Adams---Infrastructure lead, procurement system
 
--   Ellen Jones---Infrastrucuture lead, HR application
+-   Ellen Jones---Infrastructure lead, HR application
 
 -   Identity and security leads
 
@@ -652,7 +652,7 @@ _Networking and Security_
         independently for each virtual network. With a single virtual network, the network
         administrator will have full control over all subnets.
 
-        ![This diagram shows the Lucerne network design. On the left is the on-premises network, with servers, a domain controller, and a network gateway icon. On the right is the Azure virtual network, which is divided into six subnets (ExpressRoute, App Gw, Procurement Web, Procurement DB, HR App Web, and HR App DB). The ExpressRoute subnet has a network endpoint that is connected to the on-premises network gateway via an ExpressRoute connection.](images/network-design.png "Lucrne Connectivity diagram")
+        ![This diagram shows the Lucerne network design. On the left is the on-premises network, with servers, a domain controller, and a network gateway icon. On the right is the Azure virtual network, which is divided into six subnets (ExpressRoute, App Gw, Procurement Web, Procurement DB, HR App Web, and HR App DB). The ExpressRoute subnet has a network endpoint that is connected to the on-premises network gateway via an ExpressRoute connection.](images/network-design.png "Lucerne Connectivity diagram")
 
 4.  What additional security measures can you take to minimize the
     attack surface of each application at the network level?
@@ -867,7 +867,7 @@ _Migration - Procurement system_
 
         -   Web tier migration option 2: VMWare Virtual to Virtual migration.
 
-            The current webservers are VMware VMs running on vCenter. To
+            The current web servers are VMware VMs running on vCenter. To
             migrate this to Azure, Lucerne must use a conversion tool such
             as StarWind V2V. This tool must be downloaded and installed on a
             local work station. The following are the steps to use this
@@ -931,7 +931,7 @@ _Migration - Procurement system_
     -   Phase 2: Database Migration
 
         Since the SQL Database already uses Always On availability groups, near-seamless
-        migration to Azure can be acheived by extending this availability group to include 
+        migration to Azure can be achieved by extending this availability group to include 
         new SQL server instances running in Azure VMs, switching the Azure instances to
         primary, and removing the on-premises instances.
 
@@ -959,7 +959,7 @@ _Migration - Procurement system_
         When ready to migrate you have two options:
         
         -   Pause the procurement web application, or put into a 'read-only' mode if available.
-            > **Note**: this may not be necessary if transaction volumes are low, and some increase in transaction latency can be tolerated. Switch the SQL Always On availability group to synchronous replication mode, and wait until syncronized.
+            > **Note**: this may not be necessary if transaction volumes are low, and some increase in transaction latency can be tolerated. Switch the SQL Always On availability group to synchronous replication mode, and wait until synchronized.
         -   Trigger a forced failover of the SQL Server Always On Availability Group, so the Azure VM becomes the primary replica.
             > **Note**: if you used the synchronous method above, this will not be a forced failover. It will allow you to fail back without resynching the on-premises replica of the database in the case of a failure. 
         -   Update procurement web application to use the ILB endpoint as database endpoint.
@@ -975,7 +975,7 @@ _Migration - Procurement system_
             and an on-premises listener is used as the database endpoint.
 
         Testing the migration process:
-        -   It is not advisable to run test transactions through the produciton database. Testing should be
+        -   It is not advisable to run test transactions through the production database. Testing should be
             completed in a separate test or staging environment. Subject to data use constraints, a
             backup of the production database can be restored into the test environment for testing purposes.
 
@@ -1032,7 +1032,7 @@ _Migration - Procurement system_
         group with synchronous commits to similar behavior of their existing
         deployment.
 
-        ![This diagram shows the design for the procurement system once migrated to Azure. At the top is the ExpressRoute icon. This is connected to the Application Gateway icon, which sits in the App Gw subnet, and is labelled with 'Static IP address' and 'Cookie affinity' and 'Zone redundant'. The Application Gateway is connected to the web tier virtual machines, which sit within the web tier subnet. Each web tier virtual machine sits in a seperate availability zone. The web tier virtual machines are connected to the internal load balancer icon, which sits in the database tier subnet and is labelled with 'Direct Server Return'. This is connected to the database virtual machines, each of which sit within a seperate availability zone, also within the database tier subnet. The database virtual machines are connected to a storage account icon, which is labeled 'Cloud Witness (Zone Redundant)'.](images/2018-12-19-11-58-36.png "Procurement system preferred solution")
+        ![This diagram shows the design for the procurement system once migrated to Azure. At the top is the ExpressRoute icon. This is connected to the Application Gateway icon, which sits in the App Gw subnet, and is labelled with 'Static IP address' and 'Cookie affinity' and 'Zone redundant'. The Application Gateway is connected to the web tier virtual machines, which sit within the web tier subnet. Each web tier virtual machine sits in a separate availability zone. The web tier virtual machines are connected to the internal load balancer icon, which sits in the database tier subnet and is labelled with 'Direct Server Return'. This is connected to the database virtual machines, each of which sit within a separate availability zone, also within the database tier subnet. The database virtual machines are connected to a storage account icon, which is labeled 'Cloud Witness (Zone Redundant)'.](images/2018-12-19-11-58-36.png "Procurement system preferred solution")
 
 9.  How are all the VMs backed up?
 
@@ -1084,7 +1084,7 @@ _Migration - HR application_
         
 3.  Which data storage option and pricing tier would you recommend for the database?
 
-    -   Based on the desire for minimal on-going maintenance, Azure SQL Datbase
+    -   Based on the desire for minimal on-going maintenance, Azure SQL Database
         Managed Instances should be considered in preference to running SQL Server
         in Azure VMs. (Using SQL Server in VMs is a good 'plan B' in case
         an unexpected compatibility issue arises.)

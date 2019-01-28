@@ -9,7 +9,7 @@ Whiteboard design session student guide
 </div>
 
 <div class="MCWHeader3">
-August 2018
+December 2018
 </div>
 
 
@@ -141,11 +141,11 @@ network via the URL https://<span></span>procurement. Jesse is concerned about
 security to the application and wants to restrict access to only
 requests from the on-premises network.
 
-The backend for this solution is hosted on a VMware VMs using SQL Server
+The back end for this solution is hosted on a VMware VMs using SQL Server
 2012 with Always On availability groups.
 The solution makes heavy use of TempDB when
 generating ad hoc reports. The database size for this workload is
-around 600 GB. The prcurement system is a third-party component which is 
+around 600 GB. The procurement system is a third-party component which is 
 certified for use with all supported versions of SQL Server but not
 with Azure SQL Database. SQL Server capitalizes on System
 Center Data Protection Manager (DPM) 2012 R2 for regular backups
@@ -170,7 +170,7 @@ She has described this as a legacy application, which Lucerne plan to replace
 within the next 24 months.
 Ellen's team is stretched and she is keen to minimize any on-going maintenance.
 
-It is a two-tier applicaiton architecture, with the web tier running on Windows Server 2012 with 
+It is a two-tier application architecture, with the web tier running on Windows Server 2012 with 
 Microsoft Internet Information Services (IIS) and ASP.NET with the .NET
 Framework 4.5. This is implemented on two Dell PowerEdge servers,
 with two 4-core Intel Xeon CPUs (Sandy Bridge) and 4GB memory. Both the OS and application
@@ -181,7 +181,7 @@ to all staff, who are identified using their AD credentials. There have been req
 the application available from outside the corporate network, but due to security concerns
 this has not yet been implemented.
 
-The database backend runs on SQL Server 2005 in a failover cluster configuration.
+The database back end runs on SQL Server 2005 in a failover cluster configuration.
 The database design uses several T-SQL jobs scheduled using SQL Agent.
 The database size for this workload is relatively small at just under 200 GB.
 It runs on similar hardware to the web servers, except with 16GB memory and SSD disks.

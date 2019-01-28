@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-August 2018
+December 2018
 </div>
 
 
@@ -137,7 +137,7 @@ resources of your ARM template.
 
     ![The fields in the New Credential dialog box are set to the previously listed settings.](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image23.png "New Credential dialog box")
 
-    > **IMPORTANT**: It is important to use the exact name for the credential (it is case sensetive),
+    > **IMPORTANT**: It is important to use the exact name for the credential (it is case-sensitive),
 because one of the scripts you upload in the next step references the
 name directly.
 
