@@ -1082,7 +1082,7 @@ feature.
 
     ![The following code displays, with resources underlined, and a comment to \"insert code here:\" \"resources\": \[{](images/Hands-onlabstep-by-step-AzureResourceManagerimages/media/image91.png "code")
 
-    > Note: This code creates a load balancer resource that is listening on port 80.
+    > **Note**: This code creates a load balancer resource that is listening on port 80.
 
     ```
     {
@@ -1296,7 +1296,7 @@ feature.
       },
     ```
     
-    > Note: This code creates a virtual machine scale sets resource that will
+    > **Note**: This code creates a virtual machine scale sets resource that will
     create as many instances of the virtual machine as specified in the
     instanceCount parameter. The DSC extension will execute on each VM when
     it is created to configure the cloud shop web application. The scale set
