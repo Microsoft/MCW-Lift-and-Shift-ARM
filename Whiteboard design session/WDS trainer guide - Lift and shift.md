@@ -579,11 +579,11 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ##  Preferred target audience
 
--   Greg Vernon---Head of infrastructure and operations
+-   Greg Vernon, Head of infrastructure and operations
 
--   Jesse Adams---Infrastructure lead, procurement system
+-   Jesse Adams, Infrastructure lead, procurement system
 
--   Ellen Jones---Infrastructure lead, HR application
+-   Ellen Jones, Infrastructure lead, HR application
 
 -   Identity and security leads
 
@@ -688,13 +688,17 @@ _Networking and Security_
         ![This diagram shows the resource groups and permissions for each resource group. The first resource group is named 'VnetRG' and contains 'Virtual Networks'. The permissions are 'Network Team: Contributor', 'Procurement Team: Reader' and 'HR App Team: Reader'. The second resource group is named 'ProcurementRG' and contains 'Procurement system'. The permissions are 'Procurement Team: Contributor'. The third resource group is named 'HrAppRG' and contains 'HR application'. The permissions are 'HR App Team: Contributor'.](images/resource-groups.png "Preferred solution")
 
 6.  How can Lucerne control and monitor their Azure spend?
+
     -   Using Azure Resource Manager policies Lucerne can set the following constraints:
         -   Locations resources can be created
         -   Image types that can be created
         -   Instance sizes for VMs
         -   Services and service tiers that can be used (a 'service catalog')
+        
     - Lucerne can use Azure Cost Management to create detailed reports of current and forecast spend.
     - Resource Manager tags can be used to assign spending to specific teams or cost centers.
+    
+   
 
 7.  How can Lucerne monitor every level of their applications in Azure for performance and availability?
 
@@ -704,21 +708,25 @@ _Networking and Security_
         - Azure resource monitoring data
         - Azure subscription monitoring data
         - Azure tenant monitoring data 
+        
     - Interactively query and analyze monitoring data
+    
     - Proactively alert for critical conditions
+    
     - Take automated action or integrate with other systems with Event Hubs and Logic Apps
-
 
 _Migration - Procurement system_
 
 1.  What options are available to assess the procurement system for suitability
     to migrating to Azure, and to forecast Azure costs?
+    
     -   The Azure Migrate Service can be used to assess the
         infrastructure in your environment. The Azure Migrate service
         assesses on-premises workloads for migration to Azure. The
         service assesses migration suitability and performance-based
         sizing, and provides cost estimations for running your
         on-premises machines in Azure.
+        
     -   The Azure Migration Service provides the following benefits:
         -   Assess Azure readiness: Assess whether your on-premises
             machines are suitable for running in Azure.
@@ -736,6 +744,7 @@ _Migration - Procurement system_
             will assess and migrate together. You can accurately view
             dependencies for a specific machine, or for all machines in
             a group.
+            
     -   Azure Migrate currently only supports VMware workloads, which is fine
         for the procurement system. To deploy Azure Migrate:
         -   You create an Azure Migrate project.
@@ -750,6 +759,7 @@ _Migration - Procurement system_
 2.  Which compute stack would you recommend for the web tier, keeping in
     mind that the configuration of the application will essentially be
     the same (supporting cookie affinity, etc.)? 
+    
     -   Virtual Machines: The application install has a dependency on
         the global assembly cache, which rules out Azure Web Apps. These
         machines should be configured as DS2\_v2 or D2S\_v3. This will provide for
@@ -757,6 +767,7 @@ _Migration - Procurement system_
         data disk could be added to the VMs depending upon the needs of
         the application or if it doesn't meet the requirement of
         Read/Write Cache which is on by the default with all Azure VMs.
+        
     -   Application Gateway: To provide access to the procurement application and ensure
         that the needs are met for the requirement of cookie session
         affinity, an Azure Application Gateway will be built. As an
@@ -765,16 +776,19 @@ _Migration - Procurement system_
 
 3.  Which data storage option and pricing tier would you recommend for
     the database?
+    
     -   Virtual Machines and SQL Server 2012, due to the unknown
         compatibility of the third-party procurement system and Azure SQL
         Database. The customer should likely reach out to the third-party vendor to
         determine the roadmap on when and if Azure SQL Database will be
         officially supported.
+        
     -   Migration is a good opportunity to upgrade from
         the existing SQL Server 2012 to SQL Server 2017, rather than leaving
-        behind a future upgrade task. However this will also require them to
+        behind a future upgrade task. However, this will also require them to
         upgrade their existing SQL licenses. Using SQL 2012 allows existing licenses
         to be re-used under the Azure Hybrid Benefit.
+        
     -   The most likely instance size in Azure to
         match the existing hardware would be the DS3\_v2 or D4S_v3 instances. These
         support four cores, 14 or 16 GB per server, and supports
@@ -814,7 +828,7 @@ _Migration - Procurement system_
 
         All three approaches are viable. The last approach (re-install) is probably
         the best option since it is simple, gives a clean deployment with no legacy
-        artifacts, and provides an opportunity to upgrade the OS from WIndows Server 2008 R2
+        artifacts, and provides an opportunity to upgrade the OS from Windows Server 2008 R2
         to the latest OS version.
 
         -   Web tier migration option 1: Azure Site Recovery
@@ -825,6 +839,7 @@ _Migration - Procurement system_
             application that had a complex installation. 
             
             Use the  [Azure documentation](https://docs.microsoft.com/azure/site-recovery/vmware-azure-architecture) to set up ASR replication. This includes:
+            
             -   Provisioning the Azure environment (Recovery Services Vault, Virtual Network and Storage Account).
             -   Setting up ASR in the on-premises environment, including creating the necessary VMware account,
                 installing the mobility service on the web tier VMs, deploying the ASR Configuration Server
@@ -859,11 +874,12 @@ _Migration - Procurement system_
                 then the VMs in VMware should be restarted to restore
                 service.
             -   If the 'procurement' DNS entry has already been updated, revert it to the previous value.
+            
                 
             > **Note**: To minimize the impact of DNS caching, the Time-To-Live (TTL) for the DNS entry
             should be reduced to a short value (e.g. 60 seconds) well in advance of the migration.
             This enables DNS changes during migration and roll-back to take effect quickly.
-            Once migration is successful and stable, the TTL should be returned to a long value (e.g. 1 day)
+            Once migration is successful and stable, the TTL should be returned to a long value (e.g. 1 day).
 
         -   Web tier migration option 2: VMWare Virtual to Virtual migration.
 
@@ -880,6 +896,7 @@ _Migration - Procurement system_
 
             Download and install StarWind V2V Converter on a local server.
             For each web tier VM, replicate to Azure using the following process:
+            
             -   Install the Azure Virtual Machine agent on the IIS servers
                 that will be migrated, and uninstall the VMware Tools.
             -   Stop the VM using vCenter and then use the V2V
@@ -956,11 +973,13 @@ _Migration - Procurement system_
             in a SQL server Always On availability group.
         -   Set up an Azure Storage account to use as a witness for the database.
 
-        When ready to migrate you have two options:
+        When ready to migrate, you have two options:
         
         -   Pause the procurement web application, or put into a 'read-only' mode if available.
+        
             > **Note**: this may not be necessary if transaction volumes are low, and some increase in transaction latency can be tolerated. Switch the SQL Always On availability group to synchronous replication mode, and wait until synchronized.
         -   Trigger a forced failover of the SQL Server Always On Availability Group, so the Azure VM becomes the primary replica.
+        
             > **Note**: if you used the synchronous method above, this will not be a forced failover. It will allow you to fail back without resynching the on-premises replica of the database in the case of a failure. 
         -   Update procurement web application to use the ILB endpoint as database endpoint.
         -   Restart procurement web application.
@@ -996,7 +1015,7 @@ _Migration - Procurement system_
         -   Disregard compression to give worst-case estimate
         -   Time required: (600 * 1,073,741,824 * 8) / (800 * 1,000,000 * 3,600) = **1 hour 47 minutes**
 
-    -   These are ballpark estimates but they suffice to show the bandwidth is sufficient and the migration is feasible.
+    -   These are ballpark estimates, but they suffice to show the bandwidth is sufficient and the migration is feasible.
 
 6.  How does the design address user authentication?
 
@@ -1090,7 +1109,7 @@ _Migration - HR application_
         an unexpected compatibility issue arises.)
     -   The vanilla Azure SQL Database service is unsuitable due to the
         requirement for T-SQL jobs scheduled using SQL Agent;
-        however this **is** supported on Azure SQL Database Managed Instances.
+        however, this **is** supported on Azure SQL Database Managed Instances.
 
         ![The diagram shows the high-level architecture for the HR application, after migration to Azure. At the top, there is the incoming ExpressRoute connection from the on-premises network. This connects to the Internal Load Balancer, which in turn connects to the web servers. The web servers are enclosed in an availability set. The Internal Load Balancer and web servers are in the web tier. The web servers connect to the Azure SQL Database Managed Instance, which sits in the Database tier.](images/hrapp-azure.png "HR application solution design")
     
@@ -1138,6 +1157,7 @@ _Migration - HR application_
                 then the physical servers on-premises should be restarted to restore
                 service.
         -   If the 'AskHR' DNS entry has already been updated, revert it to the previous value.
+        
                 
         > **Note**: To minimize the impact of DNS caching, the Time-To-Live (TTL) for the DNS entry
             should be reduced to a short value (e.g. 60 seconds) well in advance of the migration.
