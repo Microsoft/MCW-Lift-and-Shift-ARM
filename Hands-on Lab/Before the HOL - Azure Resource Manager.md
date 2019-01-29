@@ -10,7 +10,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-August 2018
+December 2018
 </div>
 
 
@@ -29,11 +29,11 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Azure Resource Manager before the hands-on lab setup guide](#azure-resource-manager-before-the-hands-on-lab-setup-guide)
-    - [Requirements](#requirements)
-    - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Create a virtual machine for your lab environment](#task-1-create-a-virtual-machine-for-your-lab-environment)
-        - [Task 2: Connect to the VM and download the student files](#task-2-connect-to-the-vm-and-download-the-student-files)
-        - [Task 3: Validate connectivity to Azure](#task-3-validate-connectivity-to-azure)
+  - [Requirements](#requirements)
+  - [Before the hands-on lab](#before-the-hands-on-lab)
+    - [Task 1: Create a virtual machine for your lab environment](#task-1-create-a-virtual-machine-for-your-lab-environment)
+    - [Task 2: Connect to the VM and download the student files](#task-2-connect-to-the-vm-and-download-the-student-files)
+    - [Task 3: Validate connectivity to Azure](#task-3-validate-connectivity-to-azure)
 
 <!-- /TOC -->
 
@@ -56,7 +56,7 @@ files for the lab exercise.
 
 ### Task 1: Create a virtual machine for your lab environment 
 
-1.  Launch a browser using incognite or in-private mode, and navigate to
+1.  Launch a browser using incognito or in-private mode, and navigate to
     <https://portal.azure.com>. Once prompted, login with your Microsoft
     Azure credentials. If prompted, choose whether your account is an
     organization account or just a Microsoft Account.
