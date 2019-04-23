@@ -1,5 +1,7 @@
 # Lift and Shift Azure Resource Manager
 
+## This workshop is no longer being maintained and will be archived on June 28, 2019. For the latest Azure migration scenario, please use the Line of Business application migration workshop. 
+
 Lucerne Publishing is one of the largest English-language publishers in the world. With nearly 200 years of history, Lucerne has published some of the world's foremost authors, including Nobel Prize, Pulitzer Prize, National Book Award, Newbery Medal and Caldecott Medal winners. Lucerne is consistently at the forefront of innovation, using digital technology to create unique reading and viewing experiences and expand the reach of its authors and documentary producers.
 
 Lucerne is starting a three-year project to move most of its data center footprint to the cloud. "We are convinced that cloud implementations will give us cost savings and more importantly, deliver operational flexibility," says Greg Vernon, head of infrastructure and enterprise operations at Lucerne. "Like every other business, we are under constant pressure to do more with less. We believe that cloud computing will be substantially cheaper over time than in-house data centers."
