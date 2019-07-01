@@ -1,6 +1,6 @@
 # Lift and Shift Azure Resource Manager
 
-## TThis workshop is archived and is no longer being maintained. Content is read-only. For the latest Azure migration scenario, please use the Line-of-business application migration workshop. 
+## This workshop is archived and is no longer being maintained. Content is read-only. For the latest Azure migration scenario, please use the Line-of-business application migration workshop. 
 
 Lucerne Publishing is one of the largest English-language publishers in the world. With nearly 200 years of history, Lucerne has published some of the world's foremost authors, including Nobel Prize, Pulitzer Prize, National Book Award, Newbery Medal and Caldecott Medal winners. Lucerne is consistently at the forefront of innovation, using digital technology to create unique reading and viewing experiences and expand the reach of its authors and documentary producers.
 
