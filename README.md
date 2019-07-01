@@ -1,6 +1,6 @@
 # Lift and Shift Azure Resource Manager
 
-## This workshop is no longer being maintained and will be archived on June 28, 2019. For the latest Azure migration scenario, please use the Line of Business application migration workshop. 
+## TThis workshop is archived and is no longer being maintained. Content is read-only. For the latest Azure migration scenario, please use the Line-of-business application migration workshop. 
 
 Lucerne Publishing is one of the largest English-language publishers in the world. With nearly 200 years of history, Lucerne has published some of the world's foremost authors, including Nobel Prize, Pulitzer Prize, National Book Award, Newbery Medal and Caldecott Medal winners. Lucerne is consistently at the forefront of innovation, using digital technology to create unique reading and viewing experiences and expand the reach of its authors and documentary producers.
 
@@ -45,11 +45,8 @@ By the end of this lab, you will be better able to migrate and enable easy deplo
 - SQL Server
 - Azure Security
 
-## Azure solutions
-DC Migration
-
 ## Related references
-- [MCW](https://github.com/Microsoft/MCW)
+- [Microsoft Cloud Workhshop](https://microsoftcloudworkshop.com/index.html)
 - [Identity management](https://microsoft.sharepoint.com/sites/infopedia/pages/layouts/kcdoc.aspx?k=g01kc-1-30343)
 - [Hybrid networking](https://microsoft.sharepoint.com/sites/infopedia/pages/layouts/kcdoc.aspx?k=g01kc-1-30341)
 - [DMZ](https://microsoft.sharepoint.com/sites/infopedia/pages/layouts/kcdoc.aspx?k=g01kc-1-30342)
